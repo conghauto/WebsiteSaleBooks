@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "SachMoiPartial";
+}
+@using WebBanSach.Models;
+@model List<Sach> 
+@*định nghĩa kiểu dữ liệu cho biến Model *@
+
+<h1 class="item-header">Sách mới</h1>
+@{
+    foreach (var item in Model)
+    {
+        <div class="activity-list-update">
+            <img src="http://lorempixel.com/50/50/" alt="Image">
+            <p><strong>@item.TenSach</strong> uploaded a new file <a href="#">new-design.png</a></p>
+            <div class="clear"></div>
+        </div>
+    }
+
+}
+
+<a href="#" class="item-footer green">
+    Sách loại mới nhất
+</a>
+

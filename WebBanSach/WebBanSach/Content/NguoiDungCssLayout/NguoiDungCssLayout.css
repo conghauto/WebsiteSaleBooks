@@ -1,0 +1,110 @@
+﻿/*Sử dụng độ rộng cho div toàn trang*/
+div#ToanTrang{
+    position:relative;
+    font-family:'Segoe UI';
+    font-weight:bold;
+}
+#divDanhMuc{
+    height:30px;
+}
+/*Thiết kế link đăng kí, đăng nhập*/
+.DangKiDangNhap{
+    margin-top:-1%;
+    float:right; 
+}
+.DangKiDangNhap a:hover{
+    text-decoration:none;
+    color:green;
+}
+.DienThoai{
+    float:left;
+    margin-top:-1%;
+}
+.navMenu{
+    float:right;
+    margin-right:10%;
+}
+/*CSS cho Menu header*/
+.navMenu li{ 
+    display:inline;
+    border-right:solid 1px rgba(0,0,0,.5);
+    padding:20px;
+    padding-top:19px;
+    padding-bottom:22px;
+     -webkit-transition:all .5s ease-out;
+    -moz-transition:all .5s ease-out;
+    -o-transition:all .5s ease-out;
+}
+/*Css thay đổi màu chậm*/
+.navMenu li:hover{
+    background:rgba(0,0,0,.5);
+    -webkit-transition:all .5s ease-out;
+    -moz-transition:all .5s ease-out;
+    -o-transition:all .5s ease-out;
+}
+.navMenu li a:hover{
+    text-decoration:none;
+}
+/*Css txtTimKiem*/
+#txtTimKiem{
+    float:left;
+    margin-left:30px;
+}
+#txtTimKiem input{
+    height:0px;
+}
+/*Css iamge button search*/
+#imgSearch button{
+    margin-right:-60px;
+    padding:0px 10px 0px 10px;
+    background-color:#14a19a;
+}
+#imgSearch button:hover{
+    background-color:rgba(0,0,0,.5);
+    -webkit-transition:all .5s ease-out;
+    -moz-transition:all .5s ease-out;
+    -o-transition:all .5s ease-out;
+}
+#imgSearch button img{
+    height:30px;
+    width:30px;
+}
+#divMenuTrai{
+    float:left;
+    width:350px;
+    margin:0;
+    padding:0;
+}
+/*Css cho nivoslider*/
+#slider{
+    float:right;
+    width:800px;
+    height:365px;
+    margin:0;
+    padding:0;
+}
+div#slider .nivoSlider{
+    width:800px;
+    height:365px;
+    margin:0;
+    padding:0;
+}
+#slider .nivoSlider img{
+    width:800px;
+    height:365px;
+    margin:0;
+    padding:0;
+}
+
+/*Div nhà xuất bản*/
+#divleft{
+    width:30%;
+    float:left;
+}
+#divleft .item{
+    width:100%;
+}
+#divright{
+    width:70%;
+    float:right;
+}

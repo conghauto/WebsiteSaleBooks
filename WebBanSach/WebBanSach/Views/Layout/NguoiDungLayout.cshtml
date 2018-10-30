@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/ Content / css")
+    @*Chèn link CSS của free template *@
+    <link href="~/Content/NguoiDungCssLayout/screen.css" rel="stylesheet" />
+    <link href="~/Content/NguoiDungCssLayout/fonts.css" rel="stylesheet" />
+    @*Chèn CSS thiết kế*@
+    <link href="~/Content/NguoiDungCssLayout/NguoiDungCssLayout.css" rel="stylesheet" />
+    @*Chèn CSS Font kí tự*@
+    <link href="~/Content/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="~/Content/fontawesome/css/solid.min.css" rel="stylesheet" />
+    @*Chèn link css/javascript của NiVoSlider*@
+    <link href="~/NivoSlider/nivo-slider.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/NivoSlider/jquery.nivo.slider.js"></script>
+    <script src="~/NivoSlider/jquery.nivo.slider.pack.js"></script>
+</head>
+<body>
+    <div id="ToanTrang">
+        <section class="blank">
+            <div class="flash">
+                <div class="DienThoai">
+                    <i class="fas fa-phone"></i>
+                    (08) 1900-1560
+                </div>
+                <div class="DangKiDangNhap">
+                    @*Tạo div đăng kí, đăng nhập*@
+                    <i class="fas fa-sign-in-alt"></i>
+                    @Html.ActionLink("Đăng kí", "DangKi", null, htmlAttributes: new { @class = "DangKi" })
+                    <i class="fas fa-unlock"></i>
+                    @Html.ActionLink("Đăng nhập", "DangNhap", null, htmlAttributes: new { @class = "DangNhap" })
+                </div>
+            </div>
+            @*Xây dựng div Mmenu header*@
+            <div class="flash success" id="divDanhMuc">
+                @*Hộp thoại tìm kiếm*@
+                <div id="txtTimKiem">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.TextBox("txtTimKiem", "", htmlAttributes:new { @class="TextBoxTimKiem",@placeholder="Nhập nội dung tìm kiếm..."})
+                       @*Chèn vòa image button search*@
+                         <div id="imgSearch">
+                            <button type="submit"><img src="~/HinhAnh/search.png" /></button>
+                        </div>
+                    }
+                </div>
+                @*Menu bên phải*@
+                <ul class="navMenu">
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                    <li><a href="#">Hướng dẫn</a></li>
+                    <li><a href="#">Sách</a></li>
+                </ul>
+
+            </div>
+        </section>
+        <section>
+            @*Div menu bên trái*@
+            <div id="divMenuTrai">
+                <div class="activity">
+                    @* Chèn partial view sách mới *@
+                    @Html.Action("SachMoiPartial","Home")
+                    
+                </div>
+            </div>
+            @*Chèn div nivoslider*@
+            <div id="slider" class="nivoSlider" style="margin:0px;padding:0;">
+                <img style="width:850px;height:360px;" src="~/HinhAnh/toystory.jpg" />
+                <img style="width:850px;height:360px;" src="~/HinhAnh/nemo.jpg" />
+                <img style="width:850px;height:360px;" src="~/HinhAnh/up.jpg" />
+                <img style="width:850px;height:360px;" src="~/HinhAnh/walle.jpg" />
+            </div>
+        </section>
+        <div style="clear:both"></div>
+        @*Div RenderBody*@
+        <div id="NoiDung">
+            @RenderBody()
+        </div>
+        <section>
+            <div>
+                <a href="#" class="button">Khoa học</a>
+                <a href="#" class="button button-submit">Công nghệ thông tin</a>
+                <a href="#" class="button">Xã hội</a>
+                <a href="#" class="button button-submit">Giáo dục</a>
+                <a href="#" class="button button-submit">Tình yêu</a>
+                <a href="#" class="button button-submit">Gia đình</a>
+            </div>
+        </section>
+        @*Div Nhà xuất bản*@
+        <section class="blank items">
+            <div id="divleft">
+                <div class="item">
+                    <div class="item-info">
+                        <h1>Nhà xuất bản</h1>
+                        <a href="#" class="button button-buy">Kim đồng</a>
+                    </div>
+                    <img src="http://lorempixel.com/400/300/" alt="Image">
+                </div>
+            </div>
+
+            <div id="divright">
+                @RenderSection("NoiDungBenPhai")
+            </div>
+            <div>
+                <a href="#" class="button button-buy">Buy button (full width for columns)</a>
+            </div>
+            
+        </section>
+    </div>
+    @*Script chạy nivoslider*@
+    <script type="text/javascript">
+    $(window).on('load', function() {
+        $('#slider').nivoSlider({
+            controlNav:false,
+            nextText: '',
+            prevText:''
+        });
+    });
+    </script>
+</body>
+</html>
